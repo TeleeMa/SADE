@@ -5,34 +5,20 @@
 
 <sup>1</sup> [AI Thrust, HKUST(GZ)](https://www.hkust-gz.edu.cn/academics/hubs-and-thrust-areas/information-hub/artificial-intelligence/), <sup>2</sup> [CSE, HKUST](https://cse.hkust.edu.hk/)
 
-[[paper](https://arxiv.org/pdf/2308.10509.pdf)] [[homepage](https://teleema.github.io/projects/MODE/mode.html)]
+[[paper](https://arxiv.org/pdf/2308.10509.pdf)] [[homepage](https://teleema.github.io/projects/SADE/sade.html)]
 
 </div>
 
 ## Abstract
 
-With the success of Large Language Models (LLMs), a surge of Generative Vision-Language Models (GVLMs) have been constructed via multimodal instruction tuning. The tuning recipe substantially deviates from the common contrastive vision-language learning. However, the performance of GVLMs in multimodal compositional reasoning remains largely unexplored, as existing evaluation metrics and benchmarks focus predominantly on assessing contrastive models like CLIP. In this paper, we examine the potential evaluation metrics to assess the GVLMs and hypothesize generative score methods are suitable for evaluating compositionality. In addition, current benchmarks tend to prioritize syntactic correctness over semantics. The presence of morphological bias in these benchmarks can be exploited by GVLMs, leading to ineffective evaluations. To combat this, we define a MorphoBias Score to quantify the morphological bias and propose a novel LLM-based strategy to calibrate the bias. Moreover, a challenging task is added to evaluate the robustness of GVLMs against inherent inclination toward syntactic correctness. We include the calibrated dataset and the task into a new benchmark, namely MOrphologicall De-biased Benchmark (MODE). Our study provides the first unbiased benchmark for the compositionality of GVLMs, facilitating future research in this direction. We will release our code and datasets.
+With the success of Large Language Models (LLMs), many Generative Vision-Language Models (GVLMs) have been constructed via multimodal instruction tuning. However, the performance of GVLMs in multimodal compositional reasoning remains under-explored. In this paper, we examine both the evaluation metrics ( VisualGPTScore, etc.) and current benchmarks for evaluating the compositionality of GVLMs. We identify the syntactical bias in current benchmarks, which is exploited by the linguistic capability of GVLMs. The bias renders VisualGPTScore an insufficient metric for assessing GVLMs. To combat this, we first introduce a SyntaxBias Score, leveraging LLMs to quantify such bias for mitigation. A challenging new task is subsequently added to evaluate the robustness of GVLMs against inherent inclination toward syntactical correctness. Using the bias-mitigated datasets and the new task, we propose a novel benchmark, namely SyntActically DE-biased benchmark (SADE). Our study provides an unbiased benchmark for the compositionality of GVLMs, facilitating future research in this direction.
 
-## Introduction
 
-* Provide an elaborated analysis of potential evaluation protocols for measuring image-text coherence when generative vision-language models perform compositional reasoning.
-![tenser](images/fig1.png)
+## Dataset Download
 
-* We uncover that generative VLMs sometimes prefer syntactical correctness rather than content-related correctness.
-![tenser](images/fig2.png)
+1. Download the [VG](https://drive.google.com/drive/folders/11dMtJByk7zmbQjV47PXVwfmakN3Gr5Ic), [VL-CheckList](https://github.com/om-ai-lab/VL-CheckList/blob/main/DATASETS.md), [COCO2014](https://cocodataset.org/#home), [Flickr30k](https://forms.illinois.edu/sec/229675), [Winoground](https://huggingface.co/datasets/facebook/winoground).
 
-* We identify the existence of morphological bias in current multimodal compositional reasoning benchmarks, and we quantitatively assess the bias with a defined MorphoBias Score.
-
-<div  align="center">  
- <img src="images/fig3.png" width = "300" height = "300"/>
-</div>
-
-* Based on the MorphoBias Score, we propose a MOrphologicall De-biased Benchmark (MODE) based on current benchmarks for more robust multimodal compositionality evaluation.
-![tenser](images/fig4.png)
-
-## Getting Started
-
-Code coming soon.
+2. Download the positive and negative references of SADE from [here](https://drive.google.com/drive/folders/1TKFXHLIwetUPnD31gjgnMcll4wBJ1HaO?usp=sharing).
 
 ## License
 
